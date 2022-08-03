@@ -11,9 +11,7 @@ import ActivityListItem from './ActivityListItem';
 import ActivityListTotals from './ActivityListTotals';
 
 const noActivities = (
-  <Paper>
-    <Typography variant="h3">No activities to show.</Typography>
-  </Paper>
+  <Typography variant="subtitle1">No activities to show.</Typography>
 );
 
 type Props = {
@@ -33,7 +31,11 @@ const ActivityList = (props: Props): JSX.Element => {
 
   return (
     <>
-      {isLoading && <LoadingSkeleton />}
+      {isLoading && (
+        <Paper>
+          <LoadingSkeleton />
+        </Paper>
+      )}
       {!isLoading && (!activities || activities?.length < 1) && noActivities}
       {!isLoading && activities && activities?.length > 0 && (
         <>
