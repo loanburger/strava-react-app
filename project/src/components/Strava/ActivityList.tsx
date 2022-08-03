@@ -11,7 +11,9 @@ import ActivityListItem from './ActivityListItem';
 import ActivityListTotals from './ActivityListTotals';
 
 const noActivities = (
-  <Typography variant="subtitle1">No activities to show.</Typography>
+  <Paper>
+    <Typography variant="h3">No activities to show.</Typography>
+  </Paper>
 );
 
 type Props = {

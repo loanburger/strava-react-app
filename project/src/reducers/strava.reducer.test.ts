@@ -14,6 +14,8 @@ import {
   isActivityStreamLoadingAction,
   fetchActivityStreamAction,
   fetchActivityStreamDoneAction,
+  clearStravaActivityAction,
+  clearActivityStreamAction,
 } from 'src/actions';
 import {
   ActivityStreamResponse,
@@ -129,6 +131,11 @@ describe(`[reducers] app reducer`, () => {
     expect(state.athleteResponse).toEqual(response);
   });
 
+  it(`reduces ${clearStravaActivityAction.name} correctly`, () => {
+    const state = reducer(stravaInitialState, clearStravaActivityAction());
+    expect(state.activityResponse).toBeUndefined();
+  });
+
   it(`reduces ${fetchStravaAthleteStatsDoneAction.name} correctly`, () => {
     const response: IFetchStravaAthleteStatsResponse = {
       isSuccessful: true,
@@ -166,5 +173,10 @@ describe(`[reducers] app reducer`, () => {
       fetchActivityStreamDoneAction(response),
     );
     expect(state.activityStreamResponse).toEqual(response);
+  });
+
+  it(`reduces ${clearActivityStreamAction.name} correctly`, () => {
+    const state = reducer(stravaInitialState, clearActivityStreamAction());
+    expect(state.activityStreamResponse).toBeUndefined();
   });
 });

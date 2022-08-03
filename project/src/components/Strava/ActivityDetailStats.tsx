@@ -19,9 +19,9 @@ const StravaActivityDetail = (activity: ActivityDetail) => {
   } = activity;
 
   return (
-    <>
-      <Grid container item spacing={1} marginBottom={3}>
-        <Grid item spacing={1}>
+    <Grid item padding={3}>
+      <Grid container item>
+        <Grid item spacing={2} marginRight={1}>
           <img src={athlete?.profile_medium} alt="profile" />
         </Grid>
         <Grid item textAlign="start">
@@ -67,7 +67,7 @@ const StravaActivityDetail = (activity: ActivityDetail) => {
           </Typography>
         </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 };
 

@@ -6,7 +6,6 @@ body {
 
 .App {
   align-content: center;
-  text-align: center;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -45,6 +44,10 @@ input[type='number'] {
 .activity-link:visited,
 .activity-link:active {
   color: #000;
+}
+
+.activity-list-stats {
+  text-align: center;
 }
 
 .activity-link:hover {
